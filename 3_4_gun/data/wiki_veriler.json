@@ -1,0 +1,47 @@
+[
+    {
+        "baslik": "Yapay zekâ",
+        "dil": "tr",
+        "ozet": "Yapay zekâ ; hesaplama sistemlerinin öğrenme, akıl, problem çözme, algılama ve karar verme gibi tipik olarak insan zekâsıyla ilişkilendirilen görevleri yerine getirme yeteneğidir. Dördüncü Sanayi Devrimi'nin en yaygın özelliklerinden biri olarak kabul edilir. İlk ve ikinci kategoriler arasındaki ayrım genellikle seçilen kısaltmayla ortaya çıkar. Güçlü yapay zeka genellikle yapay genel zekâ olarak etiketlenirken, doğal zekayı taklit etme girişimleri yapay biyolojik zekâ olarak adlandırılır. Önde gelen yapay zekâ ders kitapları, alanı zeki etmenlerin çalışması olarak tanımlar: Çevresini algılayan ve hedeflerine başarıyla ulaşma şansını en üst düzeye çıkaran eylemleri gerçekleştiren herhangi bir cihaz. Toplum arasında, yapay zekâ kavramı genellikle insanların insan zihni ile ilişkilendirdiği öğrenme ve problem çözme gibi bilişsel eylemleri taklit eden makineleri tanımlamak için kullanılır.",
+        "kelime_sayisi": 115,
+        "son_guncelleme": "2026-03-30T03:58:47Z",
+        "sayfa_url": "https://tr.wikipedia.org/wiki/Yapay_zek%C3%A2",
+        "gorsel_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png/330px-Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png"
+    },
+    {
+        "baslik": "Yapay genel zekâ",
+        "dil": "tr",
+        "ozet": "Yapay genel zekâ (YGZ), bir insanın yapabileceği herhangi bir zihinsel görevi başarıyla gerçekleştirebilecek bir makinenin zekasıdır. Günümüzdeki bazı yapay zeka araştırmalarının temel amacıdır ve bilimkurgu ve fütüroloji'de de ortak bir konudur. Bazı araştırmacılar Yapay genel zekâyı \"güçlü yapay zekâ\", \"tam yapay zekâ\" veya bir makinenin \"genel akıllı eylem\" gerçekleştirme kabiliyeti olarak adlandırmaktadır; diğerleri ise sadece bilinci deneyimleyen makineler için \"güçlü yapay zekâ\" tabirini kullanmaktadır.",
+        "kelime_sayisi": 64,
+        "son_guncelleme": "2026-03-24T21:00:26Z",
+        "sayfa_url": "https://tr.wikipedia.org/wiki/Yapay_genel_zek%C3%A2",
+        "gorsel_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png/330px-Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png"
+    },
+    {
+        "baslik": "Yapay zekâ etiği",
+        "dil": "tr",
+        "ozet": "Yapay zekâ etiği, yapay zeka sistemlerinin tasarım ve kullanım süreçlerinde ortaya çıkan etik sorunları inceleyerek, bu sorunlarla mücadele yöntemleri geliştirmeye odaklanan disiplindir. Yapay zeka etiği robotlara ve diğer yapay zeka sistemlerine özgü teknoloji etiğinin bir parçasıdır. Yapay zeka sistemlerini tasarlarken, inşa ederken, kullanırken ve onlara karşı davranırken insanların etik davranışları ile ilgili bir roboetiğe ve yapay ahlaki etkenlerin ahlaki davranışlarıyla ilgilenen makine etiği şeklinde ikiye ayrılabilir. Yapay genel zekâ sistemlerine (YGZ) ilişkin olarak, tam etik aracı olan YGZ'lerin mevcut yasal ve sosyal çerçevelerle bütünleştirilmesine yönelik yaklaşımlar üzerinde ön çalışmalar yapılmıştır. Bu yaklaşımlar yasal konumlarının ve haklarının iki yönlü olarak ele alınmasına odaklanmıştır. YGZ sistemlerinin adil ve tarafsız olması, etik açıdan büyük önem taşır. YGZ algoritmalarının karar alma süreçlerinde hiçbir grubu haksız bir şekilde avantajlı veya dezavantajlı hale düşürmeden tasarlanmış olması gerekir. Ancak, YGZ sistemleri, geliştirildikleri veri setlerinden etkilenir ve bu veri setleri, mevcut toplumsal önyargıları yansıtabilir. Bu nedenle, YGZ'nin adalet ve tarafsızlık prensiplerine uygun olarak geliştirilmesi kritik öneme sahiptir. Yapay zekâ etiği için etik tasarımın temel bileşenleri arasında hesap verebilirlik, açıklanabilirlik ve insan denetimi ilkeleri yer almaktadır.",
+        "kelime_sayisi": 177,
+        "son_guncelleme": "2025-12-27T22:09:02Z",
+        "sayfa_url": "https://tr.wikipedia.org/wiki/Yapay_zek%C3%A2_eti%C4%9Fi",
+        "gorsel_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png/330px-Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png"
+    },
+    {
+        "baslik": "Üretken yapay zekâ",
+        "dil": "tr",
+        "ozet": "Üretken yapay zekâ, bilgisayar sistemlerinin metin, görüntü, ses gibi farklı büyük veri türlerini işleyerek orijinal içerik oluşturmasına yarayan bir yapay zekâ teknolojisi dalıdır. Bu modeller, eğitim, doğrulama ve test veri kümeleri altında yatan kalıpları ve yapıları öğrenir. Daha sonra bunları, genellikle doğal dil istemleri biçiminde gelen girdiye dayalı olarak yeni veriler üretmek için kullanır.",
+        "kelime_sayisi": 54,
+        "son_guncelleme": "2025-10-30T09:13:44Z",
+        "sayfa_url": "https://tr.wikipedia.org/wiki/%C3%9Cretken_yapay_zek%C3%A2",
+        "gorsel_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Medieval_wikipedia_man.png/330px-Medieval_wikipedia_man.png"
+    },
+    {
+        "baslik": "Yapay Zekâ Yasası",
+        "dil": "tr",
+        "ozet": "Yapay Zekâ Yasası, Avrupa Birliği'nin yapay zekâya (AI) ilişkin düzenlemesidir.",
+        "kelime_sayisi": 10,
+        "son_guncelleme": "2025-12-16T14:57:29Z",
+        "sayfa_url": "https://tr.wikipedia.org/wiki/Yapay_Zek%C3%A2_Yasas%C4%B1",
+        "gorsel_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/EKO_-_AI_ACT_-_Strasbourg_Parliament_-_52886760084.jpg/330px-EKO_-_AI_ACT_-_Strasbourg_Parliament_-_52886760084.jpg"
+    }
+]
