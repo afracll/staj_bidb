@@ -1,1 +1,191 @@
+# Claude Code'un Kullanımı
+profesyonel kullanım için Claude Code aracını seçtim. Claude Code'u seçmemin nedeni, yalnızca verilen prompta göre kod üretmeyip proje dosyalarını inceleyebilmesi, terminal komutlarını çalıştırabilmesi, hataları araştırabilmesi ve yazılım geliştirme sürecinin farklı aşamalarında kullanıcıya yardımcı olabilmesi
 
+## VS Code Entegrasyonu
+
+Claude Code, VS Code içerisinde eklenti olarak kullanılabiliyor
+- Proje klasöründeki dosyaları inceleyebilir.
+- İlgili kodları bulabilir.
+- Dosyalar üzerinde değişiklik yapabilir.
+- Terminal komutlarını çalıştırabilir.
+- Yaptığı değişiklikleri kullanıcıya gösterebilir.
+- Seçilen kod satırları hakkında açıklama yapabilir.
+
+## CLAUDE.md ile Projeyi Tanıtmak
+Bu dosya Claude'a proje hakkında sürekli bilmesi gereken bilgileri vermek için kullanılır.
+Dosyanın içerisine eklenebilen bilgiler:
+- Projenin amacı
+- Kullanılan programlama dili ve kütüphaneler
+- Klasör yapısı
+- Kodlama standartları
+- Test komutları
+- Güvenlik kuralları
+- Değiştirilmemesi gereken dosyalar
+
+Örnek bir `CLAUDE.md` dosyası şu şekilde hazırlanabilir:
+# Proje Kuralları
+
+- Bu projede Python ve FastAPI kullanılmaktadır.
+- Fonksiyonlara type hint ekle.
+- Kod değişikliklerinden sonra testleri çalıştır.
+- API anahtarlarını doğrudan kod içerisine yazma.
+- Yeni bir kütüphane eklemeden önce kullanıcıya danış.
+Böylece her konuşmada proje kurallarını tekrar açıklamak gerekmez. Claude bu bilgileri kullanarak projeyle daha uyumlu ve tutarlı kodlar oluşturabilir.
+
+## Auto Memory Özelliği
+Auto Memory özelliğiyle sonraki oturumlarda önceki konusmalari hatırlayabilir.
+mesela
+- Projenin çalıştırılma komutu
+- Daha önce karşılaşılan hatalar
+- Kullanılan klasörler
+- Projede tercih edilen çözüm yöntemleri
+- Önemli mimari kararlar
+
+## Plan Mode ile Önce Plan Hazırlamak
+
+Claude Code'a doğrudan kod yazdırmak yerine öncelikle problemi analiz etmesi ve bir çözüm planı hazırlaması istenebilir. Plan Mode kullanıldığında Claude projeyi araştırabilir ancak kaynak dosyaları değiştiremez.
+
+profesyonel prompt:
+Henüz kod yazma. Önce projeyi ve ilgili dosyaları incele.
+Bu özelliği eklemek için:
+1. Değişmesi gereken dosyaları belirle.
+2. Uygulanacak adımları sırala.
+3. Olası riskleri açıkla.
+4. Kullanılacak testleri belirle.
+
+Planı hazırladıktan sonra onayımı bekle.
+Bu yöntem sayesinde Claude'un ne yapacağı önceden görülebilir. Plan içerisinde yanlış veya gereksiz bir işlem varsa kod değiştirilmeden önce düzeltilebilir.
+
+## Permission Modes ile Yetki Kontrolü
+Claude Code'un proje üzerinde hangi işlemleri yapabileceği farklı izin modlarıyla kontrol edilebilir.
+
+| Mod | Açıklama |
+|---|---|
+| Manual | Dosya değişikliklerinden ve terminal komutlarından önce izin ister. |
+| Accept Edits | Dosya değişikliklerini kabul eder ancak önemli komutlarda izin istemeye devam eder. |
+| Plan | Projeyi inceler ve plan oluşturur fakat kaynak kodu değiştirmez. |
+| auto | İşlemleri arka plandaki güvenlik kontrollerine göre değerlendirir. |
+
+Yeni veya önemli bir projede başlangıçta Manual veya Plan Mode kullanmak daha güvenli olabilir. Bu özellik, Claude'un kontrolsüz şekilde dosyaları değiştirmesini veya riskli komutları çalıştırmasını önlemeye yardımcı olur.
+
+## Checkpoints ve Rewind
+Claude Code, dosyalarda yaptığı değişikliklerden önce mevcut durumu kaydedebilir. bu kayıtlara checkpoint denir.
+
+Claude'un yaptığı bir değişiklik projeyi bozarsa kullanıcı:
+- Yalnızca kodu önceki duruma döndürebilir.
+- Konuşmanın önceki bir noktasından yeni bir dal oluşturabilir.
+- Hem konuşmayı hem de kodu önceki duruma alabilir.
+
+Checkpoint sistemi Git'ten ayrı çalışmaktadır. Bu nedenle henüz commit oluşturulmamış değişikliklerde de kullanılabilir. Özellikle Claude'un birden fazla dosyayı değiştirdiği durumlarda güvenli bir deneme ortamı sağlar.
+
+## Code Intelligence
+Claude Code, Code Intelligence özelliği sayesinde projedeki kod yapısını daha doğru şekilde inceleyebilir. Uygun eklentiler kullanıldığında Claude:
+
+- Bir fonksiyonun veya sınıfın nerede tanımlandığını bulabilir.
+- Bir fonksiyonun kullanıldığı yerleri görebilir.
+- Kod içerisindeki semboller arasında geçiş yapabilir.
+- Değişikliklerden sonra oluşan type hatalarını fark edebilir.
+- Kodlar arasındaki ilişkileri daha iyi anlayabilir.
+Normal metin araması yalnızca aynı kelimenin geçtiği yerleri bulabilir. Code Intelligence ise yazılımın yapısal ilişkilerini kullanır. Bu nedenle özellikle büyük projelerde daha doğru sonuçlar elde edilmesini sağlar.
+
+## MCP ile Harici Araçlara Bağlanmak
+
+Model Context Protocol (MCP), Claude Code'un farklı araçlar, veri kaynakları ve servislerle bağlantı kurmasını sağlayan açık bir standarttır.
+Claude Code, MCP üzerinden şu araçlarla birlikte çalışabilir:
+
+| MCP aracı | Kullanım amacı |
+|---|---|
+| GitHub | Issue, repository ve pull request işlemleri |
+| Playwright | Web uygulamasını tarayıcıda test etmek |
+| Figma | Tasarımları inceleyerek arayüz geliştirmek |
+| PostgreSQL | Veri tabanı yapısını ve verileri incelemek |
+| Sentry | Uygulama hatalarını analiz etmek |
+| Jira | Proje görevlerini ve hata kayıtlarını okumak |
+
+Claude, GitHub'daki bir issue'yu okuyabilir, ilgili kodu değiştirebilir ve Playwright kullanarak geliştirilen web sayfasını tarayıcıda test edebilir.
+MCP'nin en önemli avantajı, farklı uygulamalardaki bilgileri sürekli kopyalayıp Claude'a vermek zorunda kalmamaktır. Claude gerekli bilgiyi bağlı olduğu araçtan alarak güncel proje verileriyle çalışabilir.
+
+## Hooks ile İşlemleri Otomatikleştirmek
+Hooks, Claude Code'un belirli aşamalarında otomatik olarak çalışan komutlardır.
+
+Hooks kullanılarak:
+- Dosya düzenlendikten sonra kod formatlanabilir.
+- Testler otomatik çalıştırılabilir.
+- Commit öncesinde lint kontrolü yapılabilir.
+- Belirli dosyaların değiştirilmesi engellenebilir.
+- Tehlikeli terminal komutları durdurulabilir.
+- Claude kullanıcıdan cevap beklediğinde bildirim gönderilebilir.
+
+`CLAUDE.md` içerisindeki kurallar Claude'a verilen talimatlardır. Hooks ise belirlenen işlemi otomatik çalıştırdığı için daha kesin bir kontrol sağlar.
+Örneğin Claude'a her seferinde “Değişiklikten sonra testleri çalıştır” demek yerine test komutu bir Hook olarak tanımlanabilir. Böylece bu kontrolün unutulma ihtimali azalır.
+
+## Skills ile Tekrarlanabilir İş Akışları
+Skills, Claude'a belirli bir konuda bilgi veya tekrar kullanılabilir bir çalışma yöntemi kazandırmak için kullanılır.
+
+örn bu işlemler için skills hazırlanabilir:
+- Kod incelemesi yapmak
+- Yeni API endpoint'i oluşturmak
+- Test senaryoları hazırlamak
+- Proje dokümantasyonu oluşturmak
+- Deployment öncesi kontrolleri yapmak
+
+Bir işlemi gerçekleştirmek için her defasında uzun bir prompt yazmak yerine daha önceden hazırlanmış bir Skill kullanılabilir.
+mesela:
+/code-review
+
+## Subagents ve Agent Teams
+
+Claude Code, büyük bir görevi farklı yardımcı ajanlara bölebilir. bunlara subagent diyoruz.
+mesela bi projede
+- Bir subagent proje yapısını araştırabilir.
+- Bir subagent güvenlik sorunlarını inceleyebilir.
+- Bir subagent testleri kontrol edebilir.
+- Başka bir subagent performans sorunlarını araştırabilir.
+
+Her subagent kendi çalışma alanında ilerleyerek ana ajana sonuçlarını iletir. Böylece ana konuşma gereksiz dosyalar ve uzun araştırma sonuçlarıyla dolmaz.
+Daha büyük projelerde Agent Teams kullanılarak birden fazla bağımsız Claude Code oturumu ortak bir görev üzerinde çalıştırılabilir. Ancak küçük projelerde çok sayıda ajan kullanmak gereksiz maliyet ve karmaşıklık oluşturabilir.
+
+## Context Management
+
+Claude'un bir oturum içerisinde kullandığı dosyalar, mesajlar ve talimatlar context window içerisinde tutulur. Konuşma uzadıkça gereksiz bilgiler bu alanı doldurabilir.
+- İlgisiz bir göreve geçerken `/clear` kullanılabilir.
+- Uzun bir çalışma `/compact` komutuyla özetlenebilir.
+- Büyük araştırmalar subagent'lara verilebilir.
+- Yalnızca gerekli dosyalar Claude'a gösterilebilir.
+- Kullanılmayan MCP bağlantıları kapatılabilir.
+- Tekrarlanan bilgiler Skills içerisine taşınabilir.
+
+Doğru context yönetimi, Claude'un önemli bilgilere daha iyi odaklanmasını sağlar. Aynı zamanda gereksiz token kullanımını ve maliyeti azaltabilir.
+
+## Test ve Doğrulama Odaklı Çalışmak
+
+Claude'un kod üretmesi, oluşturulan kodun kesinlikle doğru olduğu anlamına gelmez. Bu nedenle profesyonel kullanımda Claude'a sonucu nasıl doğrulayacağı da söylenmelidir.
+
+Bir e-posta doğrulama fonksiyonu yaz.
+Daha profesyonel bir prompt:
+Bir e-posta doğrulama fonksiyonu yaz.
+
+Önce geçerli ve geçersiz e-posta örnekleri için testler oluştur.
+Daha sonra fonksiyonu geliştir ve bütün testleri çalıştır.
+Bir test başarısız olursa hatanın temel nedenini araştır ve düzelt.
+Son olarak yaptığın değişiklikleri özetle.
+```
+yalnızca kod üretmez aynı zamanda kodu test eder, hataları araştırır ve sonucunu doğrular
+
+## Code Review ve Git Kullanımı
+
+Claude Code, yazılan kodu ayrıca incelemek için kullanılabilir. `/code-review` komutuyla değişikliklerdeki şu problemler araştırılabilir:
+- Mantık hataları
+- Güvenlik açıkları
+- Eksik test senaryoları
+- Beklenmeyen uç durumlar
+- Başka bölümlerde oluşabilecek sorunlar
+
+
+## oturum devam ve paralel çalışma
+Git worktree kullanılarak farklı Claude Code oturumları ayrı Git dallarında paralel olarak çalıştırılabilir.
+- Bir oturum yeni bir özellik geliştirebilir.
+- Başka bir oturum mevcut hataları araştırabilir.
+- Diğer bir oturum testleri geliştirebilir.
+
+ayrı çalışma alanları kullanıldığı için değişikliklerin birbirine karışma riski azalır ama paralel çalışma yalnızca birbirinden bağımsız görevlerde kullanılmalıdır.
